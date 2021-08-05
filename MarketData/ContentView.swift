@@ -9,12 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var vm: StockListViewModel
+    // @EnvironmentObject var vm: StockListViewModel
     
     var body: some View {
+        let vm = StockListViewModel(stockListService: StockListService())
         NavigationView {
-            StockListView(stocks: vm.stocks)
+            if let stocks = vm.stocks {
+              StockListView(stocks: stocks)
                 .navigationTitle("Stock List")
+            } else {
+                // TODO:
+                Text("No Stocks")
+            }
         }
         
     }
@@ -23,6 +29,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ContentView().environmentObject(StockListViewModel())
+        ContentView().environmentObject(StockListViewModel(stockListService: StockListService()))
     }
 }

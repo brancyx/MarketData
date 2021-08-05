@@ -22,8 +22,6 @@ struct StockListView: View {
 }
 
 struct StockList_Previews: PreviewProvider {
-    
-    
 
     
     static func loopThrough() -> [StockInfoModel] {
@@ -43,6 +41,12 @@ struct StockList_Previews: PreviewProvider {
     }
       
     static var previews: some View {
-        StockListView(stocks: StockListViewModel().stocks)
+        let vm = StockListViewModel(stockListService: StockListService())
+        if let stocks = vm.stocks {
+            StockListView(stocks: stocks)
+        } else {
+            Text("No Stocks")
+        }
+        
     }
 }
