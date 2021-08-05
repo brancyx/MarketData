@@ -8,7 +8,7 @@
 import Foundation
 
 
-public struct StockInfo: Identifiable {
+public struct StockInfo: Identifiable, Codable {
     
   public var id: String { symbol }// make optional??
   public var name: String

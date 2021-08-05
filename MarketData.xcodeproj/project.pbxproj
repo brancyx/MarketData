@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8335E36A26BB97FE004E2FC8 /* StockInfoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8335E36926BB97FE004E2FC8 /* StockInfoData.json */; };
 		8335E36E26BB9D3B004E2FC8 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335E36D26BB9D3B004E2FC8 /* JsonParser.swift */; };
+		8335E37226BBA254004E2FC8 /* StockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335E37126BBA254004E2FC8 /* StockListViewModel.swift */; };
 		83940CD126BA9B4400178AE3 /* MarketDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83940CD026BA9B4400178AE3 /* MarketDataApp.swift */; };
 		83940CD326BA9B4400178AE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83940CD226BA9B4400178AE3 /* ContentView.swift */; };
 		83940CD526BA9B4800178AE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83940CD426BA9B4800178AE3 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		8335E36926BB97FE004E2FC8 /* StockInfoData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StockInfoData.json; sourceTree = "<group>"; };
 		8335E36D26BB9D3B004E2FC8 /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
+		8335E37126BBA254004E2FC8 /* StockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewModel.swift; sourceTree = "<group>"; };
 		83940CCD26BA9B4400178AE3 /* MarketData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83940CD026BA9B4400178AE3 /* MarketDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataApp.swift; sourceTree = "<group>"; };
 		83940CD226BA9B4400178AE3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,25 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		8335E36F26BBA19A004E2FC8 /* StockList */ = {
+			isa = PBXGroup;
+			children = (
+				8335E37026BBA1BD004E2FC8 /* Views */,
+				83940CFF26BA9E0B00178AE3 /* Models */,
+				8335E37126BBA254004E2FC8 /* StockListViewModel.swift */,
+			);
+			path = StockList;
+			sourceTree = "<group>";
+		};
+		8335E37026BBA1BD004E2FC8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				83940CFD26BA9C0100178AE3 /* StockRow.swift */,
+				83940D0926BAA8A600178AE3 /* StockList.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		83940CC426BA9B4400178AE3 = {
 			isa = PBXGroup;
 			children = (
@@ -136,9 +157,9 @@
 		83940CCF26BA9B4400178AE3 /* MarketData */ = {
 			isa = PBXGroup;
 			children = (
+				8335E36F26BBA19A004E2FC8 /* StockList */,
 				8335E36726BB9736004E2FC8 /* Resources */,
 				83940D0426BAA2DC00178AE3 /* Common */,
-				83940CFF26BA9E0B00178AE3 /* Models */,
 				83940CFB26BA9BD000178AE3 /* Views */,
 				83940CD026BA9B4400178AE3 /* MarketDataApp.swift */,
 				83940CD226BA9B4400178AE3 /* ContentView.swift */,
@@ -186,8 +207,6 @@
 		83940CFC26BA9BE100178AE3 /* Stocks */ = {
 			isa = PBXGroup;
 			children = (
-				83940CFD26BA9C0100178AE3 /* StockRow.swift */,
-				83940D0926BAA8A600178AE3 /* StockList.swift */,
 			);
 			path = Stocks;
 			sourceTree = "<group>";
@@ -349,6 +368,7 @@
 				83940D0826BAA30600178AE3 /* Currency.swift in Sources */,
 				83940D0626BAA2F700178AE3 /* Amount.swift in Sources */,
 				8335E36E26BB9D3B004E2FC8 /* JsonParser.swift in Sources */,
+				8335E37226BBA254004E2FC8 /* StockListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
