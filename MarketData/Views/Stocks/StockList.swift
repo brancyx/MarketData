@@ -70,7 +70,7 @@ struct StockList_Previews: PreviewProvider {
         // parse json file
         
         for n in 1...5 {
-      // for-loop through json file
+      // replace with for-loop through json file
             let tradePrice = Amount(value: 650.00, currency: .usd)
             let actualChange = Amount(value: 0.00, currency: .usd)
             
