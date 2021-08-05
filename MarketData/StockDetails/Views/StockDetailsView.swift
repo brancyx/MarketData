@@ -23,7 +23,7 @@ struct StockDetailsView: View {
 
 struct StockDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        let vm = StockListViewModel(stockListService: StockListService())
+        let vm = StockListViewModel(stockListService: MockStockListDataService())
         if let stocks = vm.stocks {
             StockDetailsView(stock: stocks[0])
         } else {

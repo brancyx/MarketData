@@ -20,10 +20,22 @@ class MarketDataTests: XCTestCase {
 
     func test_JsonParser_CanParseJsonDataIntoStockInfoArray() throws {
         let stocks: [StockInfoModel] = JsonParser.load("StockInfoData.json")
-        print(stocks)
         XCTAssertEqual(stocks.count, 20)
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func test_MockStockListDataService_getTopStocksSuccess() throws {
+        let sut = MockStockListDataService()
+
+        sut.getTopStocks { result in
+            switch result{
+            case .success(let stocks):
+                XCTAssertEqual(stocks.count, 20)
+            default:
+                break
+            }
+        }
     }
 
     func testPerformanceExample() throws {
