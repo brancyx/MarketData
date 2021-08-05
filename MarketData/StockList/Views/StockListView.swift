@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct StockList: View {
+struct StockListView: View {
     
-    public var stocks: [StockInfo]
+    public var stocks: [StockInfoModel]
     
     var body: some View {
 //        return List(stocks, rowContent: StockRow.init)
         List(stocks) { stock in
-            StockRow(stock: stock)
+            StockRowView(stock: stock)
         }
     }
 }
@@ -65,8 +65,8 @@ struct StockList_Previews: PreviewProvider {
 //    }
     
     
-    static func loopThrough() -> [StockInfo] {
-        var stocks = [] as [StockInfo]
+    static func loopThrough() -> [StockInfoModel] {
+        var stocks = [] as [StockInfoModel]
         // parse json file
         
         for n in 1...5 {
@@ -75,13 +75,13 @@ struct StockList_Previews: PreviewProvider {
             let actualChange = Amount(value: 0.00, currency: .usd)
             
             let price = PriceInfo(symbol: "TSLA", tradePrice: tradePrice, actualChange: actualChange, percentageChange: 10.00)
-            let stock = StockInfo(name: "TESLA", symbol: "TSLA", imageURL: nil, priceInfo: price)
+            let stock = StockInfoModel(name: "TESLA", symbol: "TSLA", imageURL: nil, priceInfo: price)
             stocks.append(stock)
         }
         return stocks
     }
       
     static var previews: some View {
-        StockList(stocks: loopThrough())
+        StockListView(stocks: loopThrough())
     }
 }
