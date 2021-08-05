@@ -14,36 +14,33 @@ struct StockRowView: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading) {
-                Text(stock.name)
-                    .font(.headline)
-                Text(stock.symbol)
-                    .font(.subheadline)
-            }
-            Spacer()
-            VStack(alignment: .trailing) {
-                Text(((stock.priceInfo.tradePrice.getValue()) as String)).font(.headline)
-                Text(stock.priceInfo.profitAndLossString())
-                    .font(.caption)
-                    .foregroundColor(stock.priceInfo.actualChange.value >= 0.00 ? Color.green : Color.red)
-            }
-        }.padding()
+                    RoundedRectangleImageView(urlString: stock.imageURL ?? "")
+                    VStack(alignment: .leading) {
+                        Text(stock.name)
+                            .font(.headline)
+                        Text(stock.symbol)
+                            .font(.subheadline)
+                    }
+                    .padding(.leading, 5)
+                    Spacer()
+                    VStack(alignment: .trailing) {
+                        Text(((stock.priceInfo.tradePrice.getValue()) as String))
+                            .font(.headline)
+                        Text(stock.priceInfo.profitAndLossString())
+                            .font(.caption)
+                            .foregroundColor(stock.priceInfo.actualChange.value >= 0.00 ? Color.green : Color.red)
+                    }
+                }
+                .padding()
     }
 }
 
-// preview 1 stock (1 row)
 struct StockRow_Previews: PreviewProvider {
     
-    // to remove later
-    static let tradePrice = Amount(value: 650.00, currency: .usd)
-    static let actualChange = Amount(value: 0.00, currency: .usd)
-    
-    static let price = PriceInfo(symbol: "TSLA", tradePrice: tradePrice, actualChange: actualChange, percentageChange: 10.00)
-    static let stock = StockInfoModel(name: "TESLA", symbol: "TSLA", imageURL: nil, priceInfo: price)
-    
     static var previews: some View {
-        List {
-            StockRowView(stock: stock)
+        Group {
+            StockRowView(stock: StockListViewModel().stocks[0])
         }
+        .previewLayout(.fixed(width: 450, height: 100))
     }
 }

@@ -21,49 +21,8 @@ struct StockListView: View {
 
 struct StockList_Previews: PreviewProvider {
     
-//    static let tradePrice = Amount(value: 650.00, currency: .usd)
-//    static let actualChange = Amount(value: 0.00, currency: .usd)
-//
-//    static let price = PriceInfo(symbol: "TSLA", tradePrice: tradePrice, actualChange: actualChange, percentageChange: 10.00)
-//    static let stock = StockInfo(name: "TESLA", symbol: "TSLA", imageURL: nil, priceInfo: price)
     
-    //static let stocks = []
-    
-    
-//    static func readLocalJSONFile(forName name: String) -> Data? {
-//        do {
-//            if let filePath = Bundle.main.path(forResource: name, ofType: "json") {
-//                let fileUrl = URL(fileURLWithPath: filePath)
-//                let data = try Data(contentsOf: fileUrl)
-//                return data
-//            }
-//        } catch {
-//            print("error: \(error)")
-//        }
-//        return nil
-//    }
-//    
-//    struct user: Codable {
-//        let userId: Int
-//        let firstName: String
-//        let lastName: String
-//        let phoneNumber: String
-//        let emailAddress: String
-//    }
-//    struct sampleRecord: Codable {
-//        let users: [user]
-//    }
-//    
-//    static func parse(jsonData: Data) -> sampleRecord? {
-//        do {
-//            let decodedData = try JSONDecoder().decode(sampleRecord.self, from: jsonData)
-//            return decodedData
-//        } catch {
-//            print("error: \(error)")
-//        }
-//        return nil
-//    }
-    
+
     
     static func loopThrough() -> [StockInfoModel] {
         var stocks = [] as [StockInfoModel]
@@ -82,6 +41,6 @@ struct StockList_Previews: PreviewProvider {
     }
       
     static var previews: some View {
-        StockListView(stocks: loopThrough())
+        StockListView(stocks: StockListViewModel().stocks)
     }
 }

@@ -28,15 +28,15 @@ struct RoundedRectangleImageView: View {
 struct RoundedRectangleImageView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-                    RoundedRectangleImageView(urlString: "https://andrefrommalta.com/wp-content/uploads/2014/09/137392976177.jpg")
+                RoundedRectangleImageView(urlString: "https://andrefrommalta.com/wp-content/uploads/2014/09/137392976177.jpg")
 
-                }
-                .previewLayout(.fixed(width: 100, height: 100))
+        }
+        .previewLayout(.fixed(width: 100, height: 100))
 
-                Group {
-                    RoundedRectangleImageView(urlString: "")
+        Group {
+            RoundedRectangleImageView(urlString: "")
 
-                }
-                .previewLayout(.fixed(width: 100, height: 100))
+        }
+        .previewLayout(.fixed(width: 100, height: 100))
     }
 }
