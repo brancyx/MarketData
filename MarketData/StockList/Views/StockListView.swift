@@ -13,9 +13,11 @@ struct StockListView: View {
     
     var body: some View {
 //        return List(stocks, rowContent: StockRow.init)
-        List(stocks) { stock in
-            StockRowView(stock: stock)
-        }
+            List(stocks) { stock in
+                NavigationLink(destination: StockDetailsView(stock: stock)) {
+                    StockRowView(stock: stock)
+                }
+            }
     }
 }
 
