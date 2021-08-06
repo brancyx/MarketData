@@ -24,31 +24,9 @@ struct StockListView: View {
     }
 }
 
-//struct StockList_Previews: PreviewProvider {
-//
-//
-//    static func loopThrough() -> [StockInfoModel] {
-//        var stocks = [] as [StockInfoModel]
-//        // parse json file
-//
-//        for n in 1...5 {
-//      // replace with for-loop through json file
-//            let tradePrice = Amount(value: 650.00, currency: .usd)
-//            let actualChange = Amount(value: 0.00, currency: .usd)
-//
-//            let price = PriceInfo(symbol: "TSLA", tradePrice: tradePrice, actualChange: actualChange, percentageChange: 10.00)
-//            let stock = StockInfoModel(name: "TESLA", symbol: "TSLA", imageURL: nil, priceInfo: price)
-//            stocks.append(stock)
-//        }
-//        return stocks
-//    }
-//
-//    static var previews: some View {
-//        let vm = StockListViewModel(stockListService: MockStockListDataService())
-//        if let stocks = vm.stocks {
-//            StockListView(stocks: stocks)
-//        } else {
-//            Text("No Stocks")
-//        }
-//
-//    }
+struct StockList_Previews: PreviewProvider {
+    static var previews: some View {
+        StockListView()
+    }
+
+}

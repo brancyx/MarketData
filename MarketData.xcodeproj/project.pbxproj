@@ -16,6 +16,8 @@
 		8335E38026BBCD86004E2FC8 /* MockStockListDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335E37F26BBCD86004E2FC8 /* MockStockListDataService.swift */; };
 		8335E38226BBDD5A004E2FC8 /* StockListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335E38126BBDD5A004E2FC8 /* StockListService.swift */; };
 		8335E38626BBE5D5004E2FC8 /* MockDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335E38526BBE5D5004E2FC8 /* MockDelay.swift */; };
+		835E25FD26BD161F001F4263 /* StockListDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E25FC26BD161F001F4263 /* StockListDataService.swift */; };
+		835E25FF26BD17A4001F4263 /* StockListDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E25FE26BD17A3001F4263 /* StockListDataServiceTests.swift */; };
 		83940CD126BA9B4400178AE3 /* MarketDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83940CD026BA9B4400178AE3 /* MarketDataApp.swift */; };
 		83940CD326BA9B4400178AE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83940CD226BA9B4400178AE3 /* ContentView.swift */; };
 		83940CD526BA9B4800178AE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83940CD426BA9B4800178AE3 /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		8335E37F26BBCD86004E2FC8 /* MockStockListDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStockListDataService.swift; sourceTree = "<group>"; };
 		8335E38126BBDD5A004E2FC8 /* StockListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListService.swift; sourceTree = "<group>"; };
 		8335E38526BBE5D5004E2FC8 /* MockDelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDelay.swift; sourceTree = "<group>"; };
+		835E25FC26BD161F001F4263 /* StockListDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListDataService.swift; sourceTree = "<group>"; };
+		835E25FE26BD17A3001F4263 /* StockListDataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListDataServiceTests.swift; sourceTree = "<group>"; };
 		83940CCD26BA9B4400178AE3 /* MarketData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83940CD026BA9B4400178AE3 /* MarketDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataApp.swift; sourceTree = "<group>"; };
 		83940CD226BA9B4400178AE3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -181,8 +185,7 @@
 		8335E37E26BBCD5A004E2FC8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				8335E38326BBE5AD004E2FC8 /* Mock */,
-				8335E38126BBDD5A004E2FC8 /* StockListService.swift */,
+				835E25FB26BD15D2001F4263 /* StockListServices */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -202,6 +205,16 @@
 				8335E38526BBE5D5004E2FC8 /* MockDelay.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		835E25FB26BD15D2001F4263 /* StockListServices */ = {
+			isa = PBXGroup;
+			children = (
+				8335E38126BBDD5A004E2FC8 /* StockListService.swift */,
+				8335E38326BBE5AD004E2FC8 /* Mock */,
+				835E25FC26BD161F001F4263 /* StockListDataService.swift */,
+			);
+			path = StockListServices;
 			sourceTree = "<group>";
 		};
 		83940CC426BA9B4400178AE3 = {
@@ -255,6 +268,7 @@
 			children = (
 				83940CE226BA9B4800178AE3 /* MarketDataTests.swift */,
 				83940CE426BA9B4800178AE3 /* Info.plist */,
+				835E25FE26BD17A3001F4263 /* StockListDataServiceTests.swift */,
 			);
 			path = MarketDataTests;
 			sourceTree = "<group>";
@@ -438,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				835E25FD26BD161F001F4263 /* StockListDataService.swift in Sources */,
 				8335E38026BBCD86004E2FC8 /* MockStockListDataService.swift in Sources */,
 				83940D0326BAA28A00178AE3 /* PriceInfo.swift in Sources */,
 				8335E38226BBDD5A004E2FC8 /* StockListService.swift in Sources */,
@@ -460,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				835E25FF26BD17A4001F4263 /* StockListDataServiceTests.swift in Sources */,
 				83940CE326BA9B4800178AE3 /* MarketDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
