@@ -9,19 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
-     @EnvironmentObject var vm: StockListViewModel
-    
     var body: some View {
-//        let vm = StockListViewModel(stockListService: MockStockListDataService())
         NavigationView {
-            if let stocks = vm.stocks {
-              StockListView(stocks: stocks)
-                .navigationTitle("Stock List")
-            } else {
-                ProgressView()
-                // TODO:
-                //Text("No Stocks")
-            }
+            StockListView()
+                .navigationTitle("Top Stocks")
         }
         
     }
