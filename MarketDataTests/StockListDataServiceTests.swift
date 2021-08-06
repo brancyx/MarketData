@@ -30,14 +30,22 @@ class StockListDataServiceTests: XCTestCase {
         //setUpWithError()
         // run your test
         // tearDownWithError()
+        let expectation = self.expectation(description: "API Call Completed")
+        
+        var topStocks: [StockInfoModel]? = nil // No top stocks
+        
         sut.getTopStocks { result in
             switch result {
             case .success(let stocks):
-                XCTAssertEqual(stocks.count, 20)
-            default:
+                topStocks = stocks
+                
+            case .failure:
                 break
             }
+            expectation.fulfill()
         }
+        waitForExpectations(timeout: 5, handler: nil) // wait for max 5 secs
+        XCTAssertTrue(topStocks != nil) // Check if have top stocks
     }
     
     

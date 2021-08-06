@@ -11,7 +11,7 @@ class StockListDataService: StockListService {
     
     let url = URL(string: "http://localhost:8000/StockInfoData.json")!
     
-    func getTopStocks(completion: @escaping (Result<[StockInfoModel], Error>) -> Void) {
+    func getTopStocks(completion: @escaping (Result<[StockInfoModel], StockListServiceError>) -> Void) {
         let config = URLSessionConfiguration.default
         config.requestCachePolicy = .reloadIgnoringLocalCacheData
         config.urlCache = nil
@@ -23,11 +23,13 @@ class StockListDataService: StockListService {
             // Ensure no errors
             guard error == nil else {
                 print(">>>>> Error Object: ", String(describing: error))
+                completion(.failure(StockListServiceError(message: error?.localizedDescription ?? "\(#function) Error")))
                 return
             }
             
             // Ensure data is present
             guard let data = data else {
+                completion(.failure(StockListServiceError(message: "No Data")))
                 return
             }
 
@@ -36,8 +38,10 @@ class StockListDataService: StockListService {
                 let decoder = JSONDecoder()
                 let stocks: [StockInfoModel] = try decoder.decode([StockInfoModel].self, from: data)
                 print(">>>>> Stocks Array: ", String(describing: stocks))
+                completion(.success(stocks))
             } catch {
                 print(">>>>> Serialization Error: ", String(describing: error))
+                completion(.failure(StockListServiceError(message: "Serialization Error")))
             }
         })
         task.resume()
