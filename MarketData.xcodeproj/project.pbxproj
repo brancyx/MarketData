@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69A7C73A26CB58DC00D620FA /* LimitedDeque.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7C73926CB58DC00D620FA /* LimitedDeque.swift */; };
+		69A7C73D26CB592C00D620FA /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 69A7C73C26CB592C00D620FA /* OrderedCollections */; };
+		69A7C73F26CB592C00D620FA /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 69A7C73E26CB592C00D620FA /* Collections */; };
+		69A7C74126CB592C00D620FA /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 69A7C74026CB592C00D620FA /* DequeModule */; };
 		8335E36A26BB97FE004E2FC8 /* StockInfoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8335E36926BB97FE004E2FC8 /* StockInfoData.json */; };
 		8335E36E26BB9D3B004E2FC8 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335E36D26BB9D3B004E2FC8 /* JsonParser.swift */; };
 		8335E37226BBA254004E2FC8 /* StockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8335E37126BBA254004E2FC8 /* StockListViewModel.swift */; };
@@ -51,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		69A7C73926CB58DC00D620FA /* LimitedDeque.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitedDeque.swift; sourceTree = "<group>"; };
 		8335E36926BB97FE004E2FC8 /* StockInfoData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StockInfoData.json; sourceTree = "<group>"; };
 		8335E36D26BB9D3B004E2FC8 /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		8335E37126BBA254004E2FC8 /* StockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewModel.swift; sourceTree = "<group>"; };
@@ -87,6 +92,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69A7C73F26CB592C00D620FA /* Collections in Frameworks */,
+				69A7C74126CB592C00D620FA /* DequeModule in Frameworks */,
+				69A7C73D26CB592C00D620FA /* OrderedCollections in Frameworks */,
 				8335E37526BBB61E004E2FC8 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +116,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69A7C73726CB58DC00D620FA /* SearchHistory */ = {
+			isa = PBXGroup;
+			children = (
+				69A7C73826CB58DC00D620FA /* Models */,
+			);
+			name = SearchHistory;
+			path = ../../../../Desktop/SearchHistory;
+			sourceTree = "<group>";
+		};
+		69A7C73826CB58DC00D620FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				69A7C73926CB58DC00D620FA /* LimitedDeque.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		8335E36726BB9736004E2FC8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +268,7 @@
 		83940CCF26BA9B4400178AE3 /* MarketData */ = {
 			isa = PBXGroup;
 			children = (
+				69A7C73726CB58DC00D620FA /* SearchHistory */,
 				8335E37E26BBCD5A004E2FC8 /* Services */,
 				8335E37926BBC25B004E2FC8 /* StockDetails */,
 				8335E36F26BBA19A004E2FC8 /* StockList */,
@@ -337,6 +363,9 @@
 			name = MarketData;
 			packageProductDependencies = (
 				8335E37426BBB61E004E2FC8 /* SDWebImageSwiftUI */,
+				69A7C73C26CB592C00D620FA /* OrderedCollections */,
+				69A7C73E26CB592C00D620FA /* Collections */,
+				69A7C74026CB592C00D620FA /* DequeModule */,
 			);
 			productName = MarketData;
 			productReference = 83940CCD26BA9B4400178AE3 /* MarketData.app */;
@@ -411,6 +440,7 @@
 			mainGroup = 83940CC426BA9B4400178AE3;
 			packageReferences = (
 				8335E37326BBB61E004E2FC8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				69A7C73B26CB592C00D620FA /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = 83940CCE26BA9B4400178AE3 /* Products */;
 			projectDirPath = "";
@@ -464,6 +494,7 @@
 				83940D0A26BAA8A600178AE3 /* StockListView.swift in Sources */,
 				83940CD326BA9B4400178AE3 /* ContentView.swift in Sources */,
 				835E260126BD2813001F4263 /* StockListServiceError.swift in Sources */,
+				69A7C73A26CB58DC00D620FA /* LimitedDeque.swift in Sources */,
 				83940D0126BA9E3600178AE3 /* StockInfoModel.swift in Sources */,
 				8335E37826BBB7D9004E2FC8 /* RoundedRectangleImageView.swift in Sources */,
 				83940CD126BA9B4400178AE3 /* MarketDataApp.swift in Sources */,
@@ -788,6 +819,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		69A7C73B26CB592C00D620FA /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
 		8335E37326BBB61E004E2FC8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
@@ -799,6 +838,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		69A7C73C26CB592C00D620FA /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69A7C73B26CB592C00D620FA /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+		69A7C73E26CB592C00D620FA /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69A7C73B26CB592C00D620FA /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		69A7C74026CB592C00D620FA /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69A7C73B26CB592C00D620FA /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
 		8335E37426BBB61E004E2FC8 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8335E37326BBB61E004E2FC8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
